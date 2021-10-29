@@ -70,4 +70,29 @@ public class BookingStorageImpl implements BookingStorage {
             }
         }
     }
+
+    @Override
+    public Collection<Booking> getBookingsForEmployee(int employeeId) throws SQLException {
+        var sql = "select * from Bookings where employeeId = ?";
+        try (var con = getConnection();
+             var stmt = con.prepareStatement(sql)) {
+            stmt.setInt(1, employeeId);
+            var results = new ArrayList<Booking>();
+
+            try (var resultSet = stmt.executeQuery()) {
+                while (resultSet.next()){
+                    var id = resultSet.getInt("ID");
+                    var custId = resultSet.getInt("customerId");
+                    var empId = resultSet.getInt("employeeId");
+                    var date = resultSet.getString("date");
+                    var start = resultSet.getString("start");
+                    var end = resultSet.getString("end");
+
+                    Booking b = new Booking(id, custId, empId,date,start,end);
+                    results.add(b);
+                }
+                return results;
+            }
+        }
+    }
 }

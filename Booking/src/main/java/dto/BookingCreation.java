@@ -1,6 +1,5 @@
 package dto;
 
-import java.sql.*;
 import java.util.Date;
 
 public class BookingCreation {

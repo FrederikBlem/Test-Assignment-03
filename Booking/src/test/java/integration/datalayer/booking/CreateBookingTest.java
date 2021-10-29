@@ -30,6 +30,8 @@ public class CreateBookingTest {
                 booking.stream().anyMatch(x ->
                     x.getCustomerId() == 1 &&
                     x.getEmployeeId() == 1
+
+                        //Todo
                         // Cursed.
                         //&&
                     //x.getDate() ==  SqlConverter.convertToSQLDate(givenDate).toString() //MOST CURSED

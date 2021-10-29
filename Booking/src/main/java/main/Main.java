@@ -1,5 +1,6 @@
 package main;
 
+import datalayer.Employee.EmployeeStorage;
 import datalayer.Employee.EmployeeStorageImpl;
 import datalayer.booking.BookingStorageImpl;
 import dto.*;
@@ -17,6 +18,7 @@ public class Main {
     private static final String conStr = "jdbc:mysql://localhost:3307/BookingTest";
     private static final String user = "root";
     private static final String pass = "testuser1234";
+    private EmployeeStorage str;
 
     public static void main(String[] args) throws SQLException {
         BookingStorageImpl booking = new BookingStorageImpl(conStr, user,pass);
@@ -24,20 +26,20 @@ public class Main {
         EmployeeStorageImpl employee = new EmployeeStorageImpl(conStr,user,pass);
 //        CustomerCreation cust = new CustomerCreation("Frederik", "Hansen");
 //        storage.createCustomer(cust);
-        EmployeeCreation em = new EmployeeCreation("Frederikke", "Nilsson");
-        employee.createEmployee(em);
-        BookingCreation b = new BookingCreation(1,1, convertToSQLDate(new Date()) , "08:10","20:30");
-        booking.createBooking(b);
+//        EmployeeCreation em = new EmployeeCreation("Frederikke", "Nilsson");
+//        employee.createEmployee(em);
+//        BookingCreation b = new BookingCreation(1,1, convertToSQLDate(new Date()) , "08:10","20:30");
+//        booking.createBooking(b);
+//
+//        for(Booking b1 : booking.getBookingsForCustomer(1)){
+//            System.out.println(b1);
+//        }
+//
+//        for(Employee e : employee.getEmployeeWithId(1)){
+//            System.out.println(e);
+//        }
 
-        for(Booking b1 : booking.getBookingsForCustomer(1)){
-            System.out.println(b1);
-        }
 
-        for(Employee e : employee.getEmployeeWithId(1)){
-            System.out.println(e);
-        }
-
-        
     }
 //        CustomerStorageImpl storage = new CustomerStorageImpl(conStr, user, pass);
 //

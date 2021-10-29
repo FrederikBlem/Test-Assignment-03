@@ -8,10 +8,8 @@ import org.junit.jupiter.api.TestInstance;
 import servicelayer.customer.CustomerService;
 import servicelayer.customer.CustomerServiceException;
 import servicelayer.customer.CustomerServiceImpl;
-
 import java.sql.SQLException;
 import java.util.Date;
-
 import static org.mockito.Mockito.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
