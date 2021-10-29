@@ -4,6 +4,7 @@ import datalayer.Employee.EmployeeStorageImpl;
 import datalayer.booking.BookingStorageImpl;
 import dto.*;
 import datalayer.customer.CustomerStorageImpl;
+import servicelayer.employee.EmployeeServiceImpl;
 
 import java.util.Date;
 import java.sql.SQLException;
@@ -35,6 +36,8 @@ public class Main {
         for(Employee e : employee.getEmployeeWithId(1)){
             System.out.println(e);
         }
+
+        
     }
 //        CustomerStorageImpl storage = new CustomerStorageImpl(conStr, user, pass);
 //
